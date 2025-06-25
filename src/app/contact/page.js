@@ -8,7 +8,7 @@ const Contact = () => {
       </h1>
 
       <p className="mb-4 text-gray-700 dark:text-gray-300">
-        I'd love to hear from you! Whether you have a question, suggestion, or just want to connect — feel free to reach out.
+        I&apos;d love to hear from you! Whether you have a question, suggestion, or just want to connect — feel free to reach out.
       </p>
 
       <div className="mb-6">
