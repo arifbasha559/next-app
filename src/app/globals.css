@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier Prime', monospace;
+  background-color: #000000ff;
+  color: #fff;
+}
+
+.active {
+  color: #FF6c83;
+  font-weight: 600;
+  width: fit-content;
+  text-decoration: none;
+  
+}
+.nav-link::before  {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #FFb147, #FF6c83,#B86ADF);
+  bottom:0px;
+  left: 0;
+  border-radius: 10px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s linear;
+}
+.active::before {
+  transform: scaleX(1); 
+}
+.nav-link:hover::before{
+  transform: scaleX(1);
+}
+.nav-link:hover{
+  background: linear-gradient(to right, #FFb147, #FF6c83,#B86ADF);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 3s linear;
+  background-origin: left;
+
+}
+.container {
+  width: 70px; /* Adjust width as necessary */
+  height: 150px; /* Adjust height as necessary */
+  background: linear-gradient(to right, #FF6F61, #FF9A00); /* Gradient colors */
+  border-top-left-radius: 200px; /* Adjust for the curve */
+  border-bottom-left-radius: 200px; /* Adjust for the curve */
+  transform: rotate(-45deg); /* Adjust rotation to match the shape */
+  position: relative; /* Positioning context */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.shape {
+  position: absolute;
+  width: 200%; /* Make it larger to create a half-circle */
+  height: 0%; /* Make it larger to create a half-circle */
+  background: inherit; /* Use the same gradient */
+  border-radius: 510%; /* Half-circle */
+  top: -50%; /* Adjust position */
+  left: 0;
 }
